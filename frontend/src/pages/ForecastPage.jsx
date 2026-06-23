@@ -69,7 +69,7 @@ export default function ForecastPage({
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/forecast",
+        `${import.meta.env.VITE_API_URL}/forecast`,
         {
           method: "POST",
           headers: {

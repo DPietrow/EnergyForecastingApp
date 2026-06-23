@@ -59,7 +59,7 @@ export default function ProjectPage({
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/project/results")
+    fetch('${import.meta.env.VITE_API_URL}/project/results')
       .then((res) => res.json())
       .then((data) => setResults(data));
   }, []);
