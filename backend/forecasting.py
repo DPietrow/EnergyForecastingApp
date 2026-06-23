@@ -7,6 +7,7 @@ MODEL_CACHE = {}
 
 BASE_DIR = Path(__file__).resolve().parent
 MODELS_DIR = BASE_DIR / "models"
+DATA_DIR = BASE_DIR / "data"
 
 
 def load_model(region, horizon):
@@ -29,8 +30,13 @@ def load_model(region, horizon):
 
 def load_history(region):
 
+    data_path = (
+        DATA_DIR
+        / f"{region}.csv"
+    )
+
     df = pd.read_csv(
-        f"backend/data/{region}.csv",
+        data_path,
         index_col=0,
         parse_dates=True
     )
