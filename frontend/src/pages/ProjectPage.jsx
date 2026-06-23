@@ -44,6 +44,13 @@ export default function ProjectPage({
     boxShadow: "0 4px 12px rgba(0,0,0,.08)"
   };
 
+  const pageTitleStyle = {
+  fontSize: "clamp(2rem, 4vw, 3rem)",
+  fontWeight: 700,
+  color: theme.heading,
+  marginBottom: "20px"
+  };
+
   const modelCardStyle = {
     padding: "24px",
     borderRadius: "16px",
@@ -479,10 +486,3 @@ export default function ProjectPage({
     </div>
   );
 }
-
-const pageTitleStyle = {
-  fontSize: "clamp(2rem, 4vw, 3rem)",
-  fontWeight: 700,
-  color: theme.heading,
-  marginBottom: "20px"
-};
