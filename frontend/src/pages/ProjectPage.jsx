@@ -71,7 +71,63 @@ export default function ProjectPage({
   }, []);
 
   if (!results) {
-    return <div>Loading...</div>;
+    return (
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        background: darkMode ? "#0f172a" : "#f8fafc",
+        color: darkMode ? "#f8fafc" : "#111827",
+        textAlign: "center",
+        padding: "20px"
+      }}
+    >
+      <h1
+        style={{
+          fontSize: "clamp(2rem, 4vw, 3rem)",
+          marginBottom: "20px"
+        }}
+      >
+        ⚡ Electrical Load Forecasting System
+      </h1>
+
+      <div
+        style={{
+          width: "50px",
+          height: "50px",
+          border: `4px solid ${
+            darkMode ? "#334155" : "#cbd5e1"
+          }`,
+          borderTop: "4px solid #3b82f6",
+          borderRadius: "50%",
+          animation: "spin 1s linear infinite",
+          marginBottom: "24px"
+        }}
+      />
+
+      <h3
+        style={{
+          marginBottom: "12px"
+        }}
+      >
+        Loading project dashboard...
+      </h3>
+
+      <p
+        style={{
+          maxWidth: "500px",
+          lineHeight: "1.7",
+          opacity: 0.85
+        }}
+      >
+        Connecting to forecasting services and retrieving
+        model results.
+      </p>
+    </div>
+    );
   }
 
   return (
