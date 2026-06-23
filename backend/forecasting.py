@@ -1,8 +1,12 @@
 import joblib
 import pandas as pd
 import numpy as np
+from pathlib import Path
 
 MODEL_CACHE = {}
+
+BASE_DIR = Path(__file__).resolve().parent
+MODELS_DIR = BASE_DIR / "models"
 
 
 def load_model(region, horizon):
@@ -11,8 +15,13 @@ def load_model(region, horizon):
 
     if key not in MODEL_CACHE:
 
+        model_path = (
+            MODELS_DIR
+            / f"{region}_{horizon}_XGBoost.pkl"
+        )
+
         MODEL_CACHE[key] = joblib.load(
-            f"models/{region}_{horizon}_XGBoost.pkl"
+            model_path
         )
 
     return MODEL_CACHE[key]
