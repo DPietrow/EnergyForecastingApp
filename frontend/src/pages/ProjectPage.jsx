@@ -137,7 +137,7 @@ export default function ProjectPage({
         >
           <h2
             style={{
-              ...sectionTitle,
+              ...titleStyle,
               color: theme.text
             }}
           >
