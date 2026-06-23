@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ProfileSidebar from "../components/ProfileSidebar";
 
 import ArchitectureDiagram from "../components/ArchitectureDiagram";
 import Heatmap from "../components/Heatmap";
@@ -67,40 +68,18 @@ export default function ProjectPage({
   }
 
   return (
-    <div
-      style={{
-        background: theme.background,
-        color: theme.text,
-        minHeight: "100vh",
-        padding: "40px"
-      }}
-    >
-      {/* Dark Mode Toggle */}
-
-      <button
-        onClick={() => setDarkMode(!darkMode)}
-        style={{
-          position: "fixed",
-          top: "20px",
-          left: "20px",
-          zIndex: 1000,
-          padding: "12px 18px",
-          borderRadius: "999px",
-          border: "none",
-          cursor: "pointer",
-          fontWeight: 600,
-          background: darkMode ? "#ffffff" : "#111827",
-          color: darkMode ? "#111827" : "#ffffff",
-          boxShadow: "0 4px 12px rgba(0,0,0,.15)"
-        }}
-      >
-        {darkMode ? "☀️ Light" : "🌙 Dark"}
-      </button>
-
+    <>
+     <ProfileSidebar
+    darkMode={darkMode}
+    setDarkMode={setDarkMode}
+    theme={theme}
+  />
       <div
         style={{
-          maxWidth: "1200px",
-          margin: "0 auto"
+          background: theme.background,
+          color: theme.text,
+          minHeight: "100vh",
+          padding: "40px"
         }}
       >
         {/* Hero */}
@@ -416,6 +395,7 @@ export default function ProjectPage({
           </div>
         </div>
       </div>
-    </div>
+    
+    </>
   );
 }

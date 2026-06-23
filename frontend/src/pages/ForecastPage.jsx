@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ProfileSidebar from "../components/ProfileSidebar";
 
 import {
   ResponsiveContainer,
@@ -90,7 +91,6 @@ if (
 
 setForecast(data);
 
-      setForecast(data);
     } catch (error) {
       console.error(error);
       alert(
@@ -114,15 +114,25 @@ function formatTimestamp(timestamp) {
   const year =
     date.getFullYear();
 
-  const hours = String(
-    date.getHours()
-  ).padStart(2, "0");
+  let hours =
+    date.getHours();
 
   const minutes = String(
     date.getMinutes()
   ).padStart(2, "0");
 
-  return `${month}-${day}-${year} T ${hours}:${minutes}`;
+  const ampm =
+    hours >= 12 ? "PM" : "AM";
+
+  hours = hours % 12;
+
+  if (hours === 0) {
+    hours = 12;
+  }
+
+  return `${month}-${day}-${year} ${String(
+    hours
+  ).padStart(2, "0")}:${minutes} ${ampm}`;
 }
 
   const chartData = forecast
@@ -275,6 +285,12 @@ function formatTimestamp(timestamp) {
   }
 
   return (
+    <>
+     <ProfileSidebar
+    darkMode={darkMode}
+    setDarkMode={setDarkMode}
+    theme={theme}
+  />
     
     <div
   style={{
@@ -291,37 +307,6 @@ function formatTimestamp(timestamp) {
       padding: "40px"
     }}
   >
-        <button
-  onClick={() =>
-    setDarkMode(!darkMode)
-  }
-  style={{
-    position: "fixed",
-  top: "20px",
-  left: "20px",
-  zIndex: 1000,
-  padding: "12px 18px",
-  borderRadius: "999px",
-  border: "none",
-  cursor: "pointer",
-  fontWeight: "600",
-
-  background: darkMode
-    ? "#f8fafc"
-    : "#111827",
-
-  color: darkMode
-    ? "#111827"
-    : "#f8fafc",
-
-  boxShadow:
-    "0 4px 12px rgba(0,0,0,.15)"
-  }}
->
-  {darkMode
-    ? "☀️ Light"
-    : "🌙 Dark"}
-</button>
       {/* HERO */}
 
       <div
@@ -997,6 +982,7 @@ function formatTimestamp(timestamp) {
       )}
     </div>
     </div>
+    </>
   );
 }
 
