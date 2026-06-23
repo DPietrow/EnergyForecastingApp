@@ -18,10 +18,10 @@ def load_model(region, horizon):
     return MODEL_CACHE[key]
 
 
-def load_history(region, horizon):
+def load_history(region):
 
     df = pd.read_csv(
-        f"backend/data/{region}_{horizon}.csv",
+        f"backend/data/{region}.csv",
         index_col=0,
         parse_dates=True
     )
@@ -173,8 +173,7 @@ def forecast_region(
     )
 
     df, target_col = load_history(
-        region,
-        horizon
+        region
     )
 
     history = df[target_col].values
