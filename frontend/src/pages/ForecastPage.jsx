@@ -1090,7 +1090,6 @@ const cardStyle = {
 const pageTitleStyle = {
   fontSize: "clamp(2rem, 4vw, 3rem)",
   fontWeight: 700,
-  color: theme.heading,
   marginBottom: "20px"
 };
 
