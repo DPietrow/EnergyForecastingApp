@@ -664,86 +664,78 @@ function formatTimestamp(timestamp) {
 
           <div
             style={{
-              ...sectionStyle, 
+              ...sectionStyle,
               background: theme.card,
               color: theme.text
             }}
-          >
+            >         
             <h2
               style={{
-              ...sectionTitle,
-              color: theme.text
+                ...sectionTitle,
+                color: theme.text
               }}
             >
               Forecast Summary
             </h2>
-            <div 
-            style={{
-                display: "grid",
-                gridTemplateColumns:
-                  "repeat(auto-fit,minmax(180px,1fr))",
-                gap: "20px"
-            }}
-            >
-  <h2 
-      style={{
-        ...sectionTitle,
-        color: theme.text,
-        marginTop: "40px"
-      }}
+            
+            <h2 
+              style={{
+                ...sectionTitle,
+                color: theme.text,
+                marginTop: "40px"
+              }}
+                >
+            Forecast Insights
+          </h2>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns:
+              "repeat(auto-fit,minmax(180px,1fr))",
+            gap: "20px"
+          }}
         >
-    Forecast Insights
-  </h2>
-
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns:
-        "repeat(auto-fit,minmax(180px,1fr))",
-      gap: "20px"
-    }}
-  >
-    <div 
-    style={{
-      ...detailCard,
-      background: theme.card
-    }}>
-      <h4>
-        Peak Demand Period
-      </h4>
-
-      <p>{formatTimestamp(peakTimestamp)}</p>
-    </div>
-
-    <div 
-    style={{
-      ...detailCard,
-      background: theme.card
-    }}
-    >
-      <h4>
-        Load Variability
-      </h4>
-
-      <p>
-        {percentIncrease}%
-      </p>
-    </div>
-
-    <div 
-    style={{
-      ...detailCard,
-      background: theme.card
-    }}
-    >
-      <h4>
-        Production Model
-      </h4>
-
-      <p>XGBoost</p>
-    </div>
-  </div>
-</div>
+          <div 
+          style={{
+            ...detailCard,
+            background: theme.card
+          }}>
+            <h4>
+              Peak Demand Period
+            </h4>
+        
+            <p>{formatTimestamp(peakTimestamp)}</p>
+          </div>
+        
+          <div 
+          style={{
+            ...detailCard,
+            background: theme.card
+          }}
+          >
+            <h4>
+              Load Variability
+            </h4>
+        
+            <p>
+              {percentIncrease}%
+            </p>
+          </div>
+        
+          <div 
+          style={{
+            ...detailCard,
+            background: theme.card
+          }}
+          >
+            <h4>
+              Production Model
+            </h4>
+        
+            <p>XGBoost</p>
+          </div>
+      </div>
 
             <p
               style={{
