@@ -37,11 +37,6 @@ function App() {
 
   return (
     <BrowserRouter>
-
-      <Navbar
-        darkMode={darkMode}
-      />
-
       <Routes>
 
         <Route

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ProfileSidebar from "../components/ProfileSidebar";
+import Navbar from "../components/Navbar";
 
 import {
   ResponsiveContainer,
@@ -285,21 +286,28 @@ function formatTimestamp(timestamp) {
   }
 
   return (
-    <>
+    <div
+    style={{
+      background: theme.background,
+      minHeight: "100vh"
+    }}
+  >
+  <div className="page-layout">
+      <div className="sidebar">
+    
      <ProfileSidebar
     darkMode={darkMode}
     setDarkMode={setDarkMode}
     theme={theme}
   />
+  </div>
     
-    <div
-  style={{
-    background:
-      theme.background,
-    minHeight: "100vh",
-    color: theme.text
-  }}
->
+  <div className="main-content"
+    style={{
+          color: theme.text
+        }}
+  >
+     <Navbar darkMode={darkMode} />
     <div
     style={{
       maxWidth: "1300px",
@@ -982,7 +990,8 @@ function formatTimestamp(timestamp) {
       )}
     </div>
     </div>
-    </>
+    </div>
+    </div>
   );
 }
 

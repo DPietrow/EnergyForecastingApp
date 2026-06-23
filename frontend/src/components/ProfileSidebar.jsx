@@ -7,15 +7,11 @@ export default function ProfileSidebar({
 }) {
   return (
     <div
-      style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "320px",
-          padding: "20px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "12px"
+      className="sidebar"
+        style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px"
         }}
     >
       <button

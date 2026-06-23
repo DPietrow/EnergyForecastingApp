@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProfileSidebar from "../components/ProfileSidebar";
+import Navbar from "../components/Navbar";
 
 import ArchitectureDiagram from "../components/ArchitectureDiagram";
 import Heatmap from "../components/Heatmap";
@@ -68,20 +69,27 @@ export default function ProjectPage({
   }
 
   return (
-    <>
+     <div
+    style={{
+      background: theme.background,
+      minHeight: "100vh"
+    }}
+  >
+    <div className="page-layout">
+      <div className="sidebar">
      <ProfileSidebar
     darkMode={darkMode}
     setDarkMode={setDarkMode}
     theme={theme}
   />
-      <div
-        style={{
-          background: theme.background,
-          color: theme.text,
-          minHeight: "100vh",
-          padding: "40px"
+  </div>
+      <div className="main-content"
+      style={{
+          color: theme.text
         }}
+      
       >
+         <Navbar darkMode={darkMode} />
         {/* Hero */}
 
         <div
@@ -394,8 +402,8 @@ export default function ProjectPage({
             </div>
           </div>
         </div>
-      </div>
-    
-    </>
+    </div>
+    </div>
+    </div>
   );
 }
