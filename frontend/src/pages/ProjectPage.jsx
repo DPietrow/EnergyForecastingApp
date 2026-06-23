@@ -422,10 +422,16 @@ export default function ProjectPage({
         <div
           style={{
             overflowX: "auto",
+            WebkitOverflowScrolling: "touch",
             fontSize: "clamp(12px, 2vw, 16px)"
           }}
         >
-        <div style={sectionStyle}>
+        <div 
+        style={{
+          ...sectionStyle,
+          maxWidth: "100%"
+          }}
+        >
           <h2 style={titleStyle}>
             Model Comparison Heatmap
           </h2>
