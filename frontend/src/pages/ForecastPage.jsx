@@ -679,15 +679,17 @@ function formatTimestamp(timestamp) {
             </h2>
             <div 
             style={{
-              ...sectionStyle, 
-              background: theme.card,
-              color: theme.text
-              }}
+                display: "grid",
+                gridTemplateColumns:
+                  "repeat(auto-fit,minmax(180px,1fr))",
+                gap: "20px"
+            }}
             >
   <h2 
       style={{
         ...sectionTitle,
-        color: theme.text
+        color: theme.text,
+        marginTop: "40px"
       }}
         >
     Forecast Insights
@@ -697,7 +699,7 @@ function formatTimestamp(timestamp) {
     style={{
       display: "grid",
       gridTemplateColumns:
-        "repeat(auto-fit,minmax(250px,1fr))",
+        "repeat(auto-fit,minmax(180px,1fr))",
       gap: "20px"
     }}
   >
@@ -1097,5 +1099,6 @@ const detailCard = {
     borderRadius: "18px",
     padding: "20px",
     minWidth: 0,
-    overflowWrap: "break-word"
+    overflowWrap: "break-word",
+    boxSizing: "border-box"
   };
