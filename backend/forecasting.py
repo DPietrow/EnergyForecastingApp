@@ -12,7 +12,7 @@ def load_model(region, horizon):
     if key not in MODEL_CACHE:
 
         MODEL_CACHE[key] = joblib.load(
-            f"backend/models/{region}_{horizon}_XGBoost.pkl"
+            f"models/{region}_{horizon}_XGBoost.pkl"
         )
 
     return MODEL_CACHE[key]
