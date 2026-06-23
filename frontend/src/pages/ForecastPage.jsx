@@ -59,6 +59,13 @@ export default function ForecastPage({
         tag: "#f1f5f9",
         cardBorder: "#e2e8f0"
       };
+  const detailCard = {
+    background: theme.card,
+    borderRadius: "18px",
+    padding: "20px",
+    minWidth: 0,
+    overflowWrap: "break-word"
+  };
   useEffect(() => {
   document.body.style.background =
     theme.background;
@@ -1029,14 +1036,6 @@ const sectionStyle = {
 const sectionTitle = {
   textAlign: "center",
   marginBottom: "25px"
-};
-
-const detailCard = {
-  background: theme.card,
-  borderRadius: "18px",
-  padding: "20px",
-  minWidth: 0,
-  overflowWrap: "break-word"
 };
 
 const selectStyle = {
