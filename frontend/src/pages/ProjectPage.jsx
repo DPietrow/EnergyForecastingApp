@@ -423,29 +423,29 @@ export default function ProjectPage({
           style={{
             ...sectionStyle,
             background: theme.card,
-            color: theme.text,
-            overflowX: "auto"
-          }}
-        >
-        <div 
-        style={{
-          ...sectionStyle,
-          maxWidth: "100%"
+            color: theme.text
           }}
         >
           <h2 style={titleStyle}>
             Model Comparison Heatmap
           </h2>
+        
           <div
             style={{
-              minWidth: "850px"
+              overflowX: "auto"
             }}
           >
-          <Heatmap data={results.full_results} 
-            darkMode={darkMode}
-          />
+            <div
+              style={{
+                width: "850px"
+              }}
+            >
+              <Heatmap
+                data={results.full_results}
+                darkMode={darkMode}
+              />
+            </div>
           </div>
-        </div>
         </div>
 
         {/* Conclusions */}
