@@ -421,9 +421,10 @@ export default function ProjectPage({
         {/* Heatmap */}
         <div
           style={{
-            overflowX: "auto",
-            WebkitOverflowScrolling: "touch",
-            fontSize: "clamp(12px, 2vw, 16px)"
+            ...sectionStyle,
+            background: theme.card,
+            color: theme.text,
+            overflowX: "auto"
           }}
         >
         <div 
@@ -435,10 +436,15 @@ export default function ProjectPage({
           <h2 style={titleStyle}>
             Model Comparison Heatmap
           </h2>
-
+          <div
+            style={{
+              minWidth: "850px"
+            }}
+          >
           <Heatmap data={results.full_results} 
             darkMode={darkMode}
           />
+          </div>
         </div>
         </div>
 
