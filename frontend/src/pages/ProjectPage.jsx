@@ -47,7 +47,6 @@ export default function ProjectPage({
   const pageTitleStyle = {
   fontSize: "clamp(2rem, 4vw, 3rem)",
   fontWeight: 700,
-  color: theme.heading,
   marginBottom: "20px"
   };
 
@@ -104,7 +103,10 @@ export default function ProjectPage({
           }}
         >
           <h1
-            style={pageTitleStyle}
+            style={{
+              ...pageTitleStyle,
+              color: theme.heading
+            }}
           >
             Electrical Load Forecasting System
           </h1>

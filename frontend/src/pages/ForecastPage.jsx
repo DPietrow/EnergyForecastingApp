@@ -329,7 +329,10 @@ function formatTimestamp(timestamp) {
         }}
       >
         <h1
-          style={pageTitleStyle}
+          style={{
+            ...pageTitleStyle,
+            color: theme.heading
+          }}
         >
           Forecast Dashboard
         </h1>
