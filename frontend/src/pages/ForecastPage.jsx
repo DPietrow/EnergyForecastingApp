@@ -36,23 +36,29 @@ export default function ForecastPage({
   cursor: "pointer"
 };
 
-  const theme = darkMode
-  ? {
-      background: "#0f172a",
-      card: "#1e293b",
-      cardAlt: "#334155",
-      text: "#f8fafc",
-      subtext: "#cbd5e1",
-      border: "#475569"
-    }
-  : {
-      background: "#f8fafc",
-      card: "#ffffff",
-      cardAlt: "#f8fafc",
-      text: "#111827",
-      subtext: "#475569",
-      border: "#e2e8f0"
-    };
+    const theme = darkMode
+    ? {
+        background: "#0f172a",
+        card: "#1e293b",
+        cardAlt: "#334155",
+        text: "#f8fafc",
+        heading: "#ffffff",
+        subtext: "#cbd5e1",
+        tag: "#334155",
+        border: "#475569",
+        cardBorder: "#475569"
+      }
+    : {
+        background: "#f8fafc",
+        card: "#ffffff",
+        cardAlt: "#f8fafc",
+        text: "#111827",
+        heading: "#0f172a",
+        subtext: "#475569",
+        border: "#e2e8f0",
+        tag: "#f1f5f9",
+        cardBorder: "#e2e8f0"
+      };
   useEffect(() => {
   document.body.style.background =
     theme.background;
@@ -293,14 +299,13 @@ function formatTimestamp(timestamp) {
     }}
   >
   <div className="page-layout">
-      <div className="sidebar">
     
      <ProfileSidebar
     darkMode={darkMode}
     setDarkMode={setDarkMode}
     theme={theme}
   />
-  </div>
+  
     
   <div className="main-content"
     style={{
@@ -571,9 +576,13 @@ function formatTimestamp(timestamp) {
             }}
           >
             <div
-              style={
-                cardStyle
-              }
+              style={{
+                ...sectionStyle,
+                  background: theme.card,
+                  color: theme.text,
+                  textAlign:
+                    "center"
+              }}
             >
               <h3>
                 Peak Load
@@ -593,9 +602,13 @@ function formatTimestamp(timestamp) {
             </div>
 
             <div
-              style={
-                cardStyle
-              }
+              style={{
+                ...sectionStyle,
+                  background: theme.card,
+                  color: theme.text,
+                  textAlign:
+                    "center"
+              }}
             >
               <h3>
                 Average
@@ -616,9 +629,13 @@ function formatTimestamp(timestamp) {
             </div>
 
             <div
-              style={
-                cardStyle
-              }
+              style={{
+                ...sectionStyle,
+                  background: theme.card,
+                  color: theme.text,
+                  textAlign:
+                    "center"
+              }}
             >
               <h3>
                 Minimum
@@ -922,14 +939,16 @@ function formatTimestamp(timestamp) {
           <th 
           style={{
             padding: "12px",
-            borderBottom: `1px solid ${theme.border}`
+            borderBottom: `1px solid ${theme.border}`,
+            textAlign: "center"
             }}
           >
             Timestamp</th>
           <th 
           style={{
             padding: "12px",
-            borderBottom: `1px solid ${theme.border}`
+            borderBottom: `1px solid ${theme.border}`,
+            textAlign: "center"
           }}
           >Forecast</th>
         </tr>
@@ -942,7 +961,8 @@ function formatTimestamp(timestamp) {
               <td 
               style={{
                 padding: "10px",
-                borderBottom: `1px solid ${theme.border}`
+                borderBottom: `1px solid ${theme.border}`,
+                textAlign: "center"
                 }}
               >
                 {
@@ -950,7 +970,13 @@ function formatTimestamp(timestamp) {
                 }
               </td>
 
-              <td>
+              <td
+              style={{
+                padding: "10px",
+                borderBottom: `1px solid ${theme.border}`,
+                textAlign: "center"
+                }}
+              >
                 {row.forecast.toFixed(
                   0
                 )}

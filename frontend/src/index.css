@@ -25,6 +25,7 @@ body {
 }
 
 .sidebar {
+  position: sticky;
   width: 320px;
   flex-shrink: 0;
 }

@@ -85,6 +85,7 @@ export default function ProfileSidebar({
       <div
         style={{
           background: theme.card,
+          textAlign: "center",
           borderRadius: "20px",
           padding: "20px",
           boxShadow:

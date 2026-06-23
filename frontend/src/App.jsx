@@ -10,6 +10,7 @@ import {
 } from "react";
 
 import Navbar from "./components/Navbar";
+import "./App.css";
 
 import ProjectPage from "./pages/ProjectPage";
 import ForecastPage from "./pages/ForecastPage";

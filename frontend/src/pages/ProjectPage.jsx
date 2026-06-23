@@ -76,13 +76,11 @@ export default function ProjectPage({
     }}
   >
     <div className="page-layout">
-      <div className="sidebar">
      <ProfileSidebar
     darkMode={darkMode}
     setDarkMode={setDarkMode}
     theme={theme}
   />
-  </div>
       <div className="main-content"
       style={{
           color: theme.text
