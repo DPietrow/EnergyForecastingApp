@@ -59,13 +59,6 @@ export default function ForecastPage({
         tag: "#f1f5f9",
         cardBorder: "#e2e8f0"
       };
-  const detailCard = {
-    background: theme.card,
-    borderRadius: "18px",
-    padding: "20px",
-    minWidth: 0,
-    overflowWrap: "break-word"
-  };
   useEffect(() => {
   document.body.style.background =
     theme.background;
@@ -488,9 +481,10 @@ function formatTimestamp(timestamp) {
               }}
             >
               <div
-                style={
-                  detailCard
-                }
+                style={{
+                ...detailCard,
+                  background: theme.card
+                }}
               >
                 <h4>
                   Model
@@ -501,9 +495,10 @@ function formatTimestamp(timestamp) {
               </div>
 
               <div
-                style={
-                  detailCard
-                }
+               style={{
+                ...detailCard,
+                background: theme.card
+                }}
               >
                 <h4>
                   Region
@@ -516,9 +511,10 @@ function formatTimestamp(timestamp) {
               </div>
 
               <div
-                style={
-                  detailCard
-                }
+               style={{
+                ...detailCard,
+                background: theme.card
+                }}
               >
                 <h4>
                   Horizon
@@ -531,9 +527,10 @@ function formatTimestamp(timestamp) {
               </div>
 
               <div
-                style={
-                  detailCard
-                }
+                style={{
+                ...detailCard,
+                background: theme.card
+              }}
               >
                 <h4>
                   Forecast
@@ -549,9 +546,10 @@ function formatTimestamp(timestamp) {
               </div>
 
               <div
-                style={
-                  detailCard
-                }
+                style={{
+                ...detailCard,
+                background: theme.card
+                }}
               >
                 <h4>
                   Training
@@ -700,7 +698,11 @@ function formatTimestamp(timestamp) {
       gap: "20px"
     }}
   >
-    <div style={detailCard}>
+    <div 
+    style={{
+      ...detailCard,
+      background: theme.card
+    }}>
       <h4>
         Peak Demand Period
       </h4>
@@ -708,7 +710,12 @@ function formatTimestamp(timestamp) {
       <p>{formatTimestamp(peakTimestamp)}</p>
     </div>
 
-    <div style={detailCard}>
+    <div 
+    style={{
+      ...detailCard,
+      background: theme.card
+    }}
+    >
       <h4>
         Load Variability
       </h4>
@@ -718,7 +725,12 @@ function formatTimestamp(timestamp) {
       </p>
     </div>
 
-    <div style={detailCard}>
+    <div 
+    style={{
+      ...detailCard,
+      background: theme.card
+    }}
+    >
       <h4>
         Production Model
       </h4>
@@ -1078,3 +1090,10 @@ const pageTitleStyle = {
   color: theme.heading,
   marginBottom: "20px"
 };
+
+const detailCard = {
+    borderRadius: "18px",
+    padding: "20px",
+    minWidth: 0,
+    overflowWrap: "break-word"
+  };
