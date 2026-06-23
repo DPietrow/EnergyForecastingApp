@@ -329,11 +329,7 @@ function formatTimestamp(timestamp) {
         }}
       >
         <h1
-          style={{
-            fontSize: "42px",
-            color: theme.text,
-            marginBottom: "15px"
-          }}
+          style={pageTitleStyle}
         >
           Forecast Dashboard
         </h1>
@@ -1036,10 +1032,11 @@ const sectionTitle = {
 };
 
 const detailCard = {
-  border: "1px solid #e2e8f0",
-  borderRadius: "14px",
+  background: theme.card,
+  borderRadius: "18px",
   padding: "20px",
-  textAlign: "center"
+  minWidth: 0,
+  overflowWrap: "break-word"
 };
 
 const selectStyle = {
@@ -1074,4 +1071,11 @@ const cardStyle = {
   borderRadius: "18px",
   textAlign: "center",
   boxShadow: "0 4px 12px rgba(0,0,0,.08)"
+};
+
+const pageTitleStyle = {
+  fontSize: "clamp(2rem, 4vw, 3rem)",
+  fontWeight: 700,
+  color: theme.heading,
+  marginBottom: "20px"
 };

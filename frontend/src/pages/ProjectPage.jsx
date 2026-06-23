@@ -97,11 +97,7 @@ export default function ProjectPage({
           }}
         >
           <h1
-            style={{
-              color: theme.heading,
-              fontSize: "44px",
-              fontWeight: 800
-            }}
+            style={pageTitleStyle}
           >
             Electrical Load Forecasting System
           </h1>
@@ -123,7 +119,72 @@ export default function ProjectPage({
             generating future energy demand forecasts.
           </p>
         </div>
-
+        <div
+          style={{
+            ...sectionStyle,
+            background: theme.card,
+            color: theme.text
+          }}
+        >
+          <h2
+            style={{
+              ...sectionTitle,
+              color: theme.text
+            }}
+          >
+            Business Problem
+          </h2>
+          
+          <p
+            style={{
+              lineHeight: 1.8,
+              color: theme.subtext
+            }}
+          >
+            Electrical utilities must continuously balance power generation with
+            customer demand. Overestimating demand can result in unnecessary
+            generation costs and underutilized resources, while underestimating
+            demand can create reliability risks, increase energy market purchases,
+            and place additional strain on grid operations during peak periods.
+          </p>
+          
+          <p
+            style={{
+              lineHeight: 1.8,
+              color: theme.subtext
+            }}
+          >
+            Accurate load forecasting is therefore critical for generation planning,
+            resource allocation, maintenance scheduling, and participation in
+            wholesale energy markets. Forecast accuracy becomes increasingly
+            challenging as planning horizons extend from hourly operational
+            decisions to weekly and monthly resource planning.
+          </p>
+          
+          <p
+            style={{
+              lineHeight: 1.8,
+              color: theme.subtext
+            }}
+          >
+            This project evaluates multiple forecasting approaches—including Naive
+            Baseline, Random Forest, XGBoost, LSTM, and GRU models—across several
+            forecasting horizons to identify the most effective production-ready
+            solution. The objective is to improve forecast accuracy while balancing
+            model performance, training cost, and operational scalability.
+          </p>
+          
+          <p
+            style={{
+              lineHeight: 1.8,
+              color: theme.subtext
+            }}
+          >
+            The resulting system provides utility planners with reliable demand
+            forecasts and demonstrates how machine learning can support
+            data-driven decision making in modern energy operations.
+          </p>
+        </div>
         {/* Project Metrics */}
 
         <div
@@ -286,7 +347,13 @@ export default function ProjectPage({
         </div>
 
         {/* Winner Table */}
-
+        <div
+          style={{
+            overflowX: "auto",
+            width: "100%",
+            fontSize: "clamp(12px, 2vw, 16px)"
+          }}
+        >
         <div style={sectionStyle}>
           <h2 style={titleStyle}>
             Winner Table
@@ -338,11 +405,17 @@ export default function ProjectPage({
                 )}
               </tbody>
             </table>
+            </div>
           </div>
         </div>
 
         {/* Heatmap */}
-
+        <div
+          style={{
+            overflowX: "auto",
+            fontSize: "clamp(12px, 2vw, 16px)"
+          }}
+        >
         <div style={sectionStyle}>
           <h2 style={titleStyle}>
             Model Comparison Heatmap
@@ -351,6 +424,7 @@ export default function ProjectPage({
           <Heatmap data={results.full_results} 
             darkMode={darkMode}
           />
+        </div>
         </div>
 
         {/* Conclusions */}
@@ -405,3 +479,10 @@ export default function ProjectPage({
     </div>
   );
 }
+
+const pageTitleStyle = {
+  fontSize: "clamp(2rem, 4vw, 3rem)",
+  fontWeight: 700,
+  color: theme.heading,
+  marginBottom: "20px"
+};
